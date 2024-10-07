@@ -25,9 +25,6 @@
   }
 }
 
-
-
-
 .chat-controls .sound-icon {
   cursor: pointer;
 }
@@ -38,7 +35,6 @@
   overflow-y: auto; /* Single scrollbar for the entire body */
   height: 400px; /* Set a fixed height to the body for the entire chat content */
   padding: 10px;
-  
 }
 
 .chat-footer {
@@ -47,7 +43,8 @@
   padding: 10px;
 }
 
-.send-button, .emoji-button {
+.send-button,
+.emoji-button {
   margin-left: 5px;
 }
 
@@ -98,8 +95,6 @@
   --bs-card-spacer-x: 0rem !important;
 }
 
-
-
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -119,7 +114,7 @@
 
 .d-flex.flex-wrap.justify-content-center {
   margin: 0; /* Set margin to zero */
-  padding: 0; /* Set padding to zero if needed */
+  padding: 0; /* Set padding to zero */
 }
 
 .greeting-message {
@@ -147,23 +142,64 @@
   flex-grow: 1;
 }
 
+/* Dark Mode Styles */
 .dark-mode {
-  background-color: #54C392;
-  color: white;
-}
-
-.dark-mode .chat-header {
-  background-color: #54C392;
+  background-color: #333; /* Darker background for large screens */
   color: white;
 }
 
 .dark-mode .chat-body {
-  background-color: #333;
+  background-color: #222; /* Slightly darker for large screens */
+  color: white;
+}
+
+.dark-mode .chat-header {
+  background-color: #444; /* Darker header for large screens */
   color: white;
 }
 
 .dark-mode .chat-footer {
-  background-color: #222;
+  background-color: #333; /* Dark footer */
+  color: white;
+}
+
+/* Ensure scrollbars look good in dark mode */
+.dark-mode .chat-body::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+.dark-mode .chat-body::-webkit-scrollbar-track {
+  background: #444;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 2560px) {
+  .chat-body {
+    height: 600px; /* Increase height for higher resolution */
+  }
+
+  .chat-header {
+    font-size: 1.5rem; /* Increase header font size */
+  }
+
+  .chat-footer {
+    font-size: 1.5rem; /* Adjust footer font size */
+  }
+
+  .message-container {
+    font-size: 1.2rem; /* Larger message text */
+  }
+
+  .chat-button {
+    bottom: 40px; /* Adjust positioning for larger screens */
+    right: 40px;
+  }
+}
+
+@media (min-width: 3072px) {
+  .chat-body {
+    height: 700px; /* Further increase height for larger screens */
+  }
 }
 
 /* Customizing the scrollbar for WebKit browsers (Chrome, Safari) */
@@ -198,22 +234,8 @@
   height: 20px; /* Custom height for Firefox scrollbar thumb */
 }
 
-.chat-body::-webkit-scrollbar {
-  width: 6px;
-}
-
-.chat-body::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
-}
-
-.chat-body::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
 .scroll-down-icon {
   cursor: pointer;
   color: #54C392;
   margin-top: 10px;
 }
-
-
