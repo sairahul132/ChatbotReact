@@ -1,0 +1,29 @@
+/* Styling for the main app container */
+.app-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Styling for the iframe to take full space */
+  .embedded-site {
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove iframe border */
+  }
+  
+  /* Ensure the chatbot is positioned above the iframe */
+  .chatbot {
+    position: fixed; /* Fixes the chatbot to the viewport */
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure it's on top of the iframe */
+    filter: none; /* Prevents any blurring or filter effects */
+    transform: none; /* Ensures no unwanted transformations */
+    opacity: 1; /* Ensures full opacity */
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
